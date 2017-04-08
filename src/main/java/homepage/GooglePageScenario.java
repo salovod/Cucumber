@@ -14,15 +14,16 @@ public class GooglePageScenario {
 
     @Given("^I am simple user$")
     public void iAmSimpleUser() {
+
     }
 
     @When("^I enter some query$")
-    public void enterSomeQuery() {
+    public void iEnterSomeQuery() throws Throwable {
         googlePage.enterSomeQuery();
     }
 
     @Then("^I see result$")
-    public void the_result_should_be(String expectedResult) {
+    public void iSeeResult() {
         googlePage.the_result_should_be("fdsdfsgfdg");
     }
 }

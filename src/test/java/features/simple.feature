@@ -12,6 +12,6 @@ Feature: Google Search
     When
     I enter some query
     Then
-    I see resultert
+    I see result
 
   Scenario: Click on first one
