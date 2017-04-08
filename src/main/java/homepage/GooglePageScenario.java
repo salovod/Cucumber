@@ -1,20 +1,21 @@
+package homepage;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import homepage.GooglePage;
-import preparation.DriverConfiguration;
 
 /**
  * Created by Sacred on 08.04.2017.
  */
-public class TestRunner extends DriverConfiguration {
+public class GooglePageScenario {
+
 
     GooglePage googlePage = new GooglePage();
 
 
     @Given("^I am simple user$")
     public void iAmSimpleUser() {
-
+        googlePage.iAmSimpleUser();
     }
 
     @When("^I enter some query$")
@@ -26,5 +27,4 @@ public class TestRunner extends DriverConfiguration {
     public void iSeeResult() {
         googlePage.the_result_should_be("fdsdfsgfdg");
     }
-
 }

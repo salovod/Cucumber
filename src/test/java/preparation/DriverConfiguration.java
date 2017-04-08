@@ -1,9 +1,10 @@
 package preparation;
 
+import homepage.ChooseDriver;
 import org.junit.After;
 import org.junit.Before;
 
-import static preparation.ChooseDriver.driver;
+import static homepage.ChooseDriver.driver;
 
 /**
  * Created by Sacred on 08.04.2017.

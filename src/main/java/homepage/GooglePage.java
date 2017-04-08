@@ -1,16 +1,19 @@
 package homepage;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import static homepage.ChooseDriver.driver;
 
 /**
  * Created by Sacred on 08.04.2017.
  */
 public class GooglePage {
 
-    WebDriver driver;
+
+    ChooseDriver chooseDriver = new ChooseDriver();
 
     public void iAmSimpleUser() {
+        chooseDriver.openBrowser();
     }
     public void enterSomeQuery() {
         driver.findElement(By.id("lst-ib")).sendKeys("test");

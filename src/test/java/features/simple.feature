@@ -7,11 +7,9 @@ Feature: Google Search
 
   Scenario: homepage navigation
 
-    Given
-    I am simple user
-    When
-    I enter some query
-    Then
-    I see result
+    Given I am simple user
+    When I enter some query
+    Then I see result
 
-  Scenario: Click on first one
+
+  Scenario: homepage navigation
