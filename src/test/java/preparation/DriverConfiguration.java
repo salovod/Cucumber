@@ -1,26 +1,29 @@
 package preparation;
 
-import homepage.ChooseDriver;
+import com.codeborne.selenide.Configuration;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.junit.After;
 import org.junit.Before;
 
-import static homepage.ChooseDriver.driver;
+import static com.codeborne.selenide.Selenide.close;
+import static com.codeborne.selenide.Selenide.open;
 
 /**
  * Created by Sacred on 08.04.2017.
  */
 public class DriverConfiguration {
 
-    ChooseDriver chooseDriver = new ChooseDriver();
 
     @Before
     public void before() {
-        chooseDriver.openBrowser();
+        ChromeDriverManager.getInstance().setup();
+        Configuration.browser = "chrome";
+        open("http://google.com");
     }
 
 
     @After
     public void after() {
-        driver.close();
+        close();
     }
 }

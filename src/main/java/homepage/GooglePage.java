@@ -1,8 +1,12 @@
 package homepage;
 
-import org.openqa.selenium.By;
+import com.codeborne.selenide.Configuration;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-import static homepage.ChooseDriver.driver;
+import static com.codeborne.selenide.Selenide.*;
 
 /**
  * Created by Sacred on 08.04.2017.
@@ -10,16 +14,21 @@ import static homepage.ChooseDriver.driver;
 public class GooglePage {
 
 
-    ChooseDriver chooseDriver = new ChooseDriver();
-
+    @Given("^I am simple user$")
     public void iAmSimpleUser() {
-        chooseDriver.openBrowser();
-    }
-    public void enterSomeQuery() {
-        driver.findElement(By.id("lst-ib")).sendKeys("test");
+        ChromeDriverManager.getInstance().setup();
+        Configuration.browser = "chrome";
+        open("http://google.com");
     }
 
-    public void the_result_should_be(String expectedResult) {
-        driver.findElements(By.cssSelector("h3 > a")).get(0).click();
+    @When("^I enter some query$")
+    public void enterSomeQuery() {
+        $("#lst-ib").val("test").pressEnter();
+    }
+
+
+    @Then("^I see result$")
+    public void iSeeResult() {
+        $$("h3 > a").get(0).click();
     }
 }
