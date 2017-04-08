@@ -2,7 +2,6 @@ package preparation;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 import static preparation.ChooseDriver.driver;
 
@@ -22,10 +21,5 @@ public class DriverConfiguration {
     @After
     public void after() {
         driver.close();
-    }
-
-    @Test
-    public void ffg() {
-
     }
 }
