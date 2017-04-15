@@ -1,3 +1,6 @@
 /.idea/
 /target/
 /Cucumber.iml
+/build/
+/cucumber.json
+/ourautomation.iml
