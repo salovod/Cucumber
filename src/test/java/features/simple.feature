@@ -13,3 +13,8 @@ Feature: Google Search
 
 
   Scenario: homepage navigation
+
+
+    Given As a user I want to navigate to rozetka
+    When I can search for tablet
+    Then I can found tablet
