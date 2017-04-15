@@ -1,9 +1,9 @@
 package preparation;
 
 import com.codeborne.selenide.Configuration;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
-import org.junit.After;
-import org.junit.Before;
 
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
@@ -14,16 +14,15 @@ import static com.codeborne.selenide.Selenide.open;
 public class DriverConfiguration {
 
 
-    @Before
-    public void before() {
+    @Before("@web")
+    public void beforeScenario() {
         ChromeDriverManager.getInstance().setup();
         Configuration.browser = "chrome";
         open("http://google.com");
     }
 
-
-    @After
-    public void after() {
+    @After("@web")
+    public void afterScenario() {
         close();
     }
 }
