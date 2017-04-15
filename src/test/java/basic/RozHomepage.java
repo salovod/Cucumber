@@ -29,7 +29,6 @@ public class RozHomepage {
     public void beforeScenario() {
         ChromeDriverManager.getInstance().setup();
         Configuration.browser = "chrome";
-        open("http://google.com");
     }
 
     @After("@web")
@@ -39,7 +38,6 @@ public class RozHomepage {
 
     @Given("^As a user I want to navigate to '(.*)'")
     public void asAUserIWantToNavigateToRozetka(String url) {
-        System.out.println(url);
         open(url);
     }
 
